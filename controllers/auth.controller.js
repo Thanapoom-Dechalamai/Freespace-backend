@@ -1,7 +1,7 @@
 const { getRandomInteger } = require('../helpers/tools');
 const { isUsernameAvailable } = require('../helpers/tools');
 const User = require('../models/user.model');
-const { createProfile: CreateProfile } = require('./profile.controller');
+const { createProfile } = require('./profile.controller');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -47,7 +47,7 @@ const methods = {
             _user.save()
                 .then((data) =>
                 {
-                    CreateProfile({ _id: data._doc._id, caption: "", picture: `https://freespace-api.onrender.com/images/${getRandomInteger(1, 9)}.jpg` }, res)
+                    createProfile({ _id: data._doc._id, caption: "", picture: `https://freespace-api.onrender.com/images/${getRandomInteger(1, 9)}.jpg` }, res)
                         .catch((error) =>
                         {
                             return res.status(500).json({
