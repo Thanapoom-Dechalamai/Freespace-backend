@@ -8,7 +8,7 @@ const app = express();
 env.config();
 
 app.use(cors({
-    origin: ['https://freespace.onrender.com']
+    origin: ['https://freespace.vercel.app']
 }));
 
 mongoose.connect(`${process.env.DB_URL}`).then(() =>
