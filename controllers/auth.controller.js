@@ -47,7 +47,7 @@ const methods = {
             _user.save()
                 .then((data) =>
                 {
-                    CreateProfile({ _id: data._doc._id, caption: "", picture: `http://localhost:8000/images/${getRandomInteger(1, 9)}.jpg` }, res)
+                    CreateProfile({ _id: data._doc._id, caption: "", picture: `https://freespace-api.onrender.com/images/${getRandomInteger(1, 9)}.jpg` }, res)
                         .catch((error) =>
                         {
                             return res.status(500).json({
